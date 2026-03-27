@@ -1,0 +1,212 @@
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1e4ed8;
+    --text-main: #1e293b;
+    --text-light: #64748b;
+    --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+    --card-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg-gradient);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.login-container {
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    min-height: 550px;
+}
+
+/* Section Gauche (Image/Marque) */
+.brand-section {
+    flex: 1;
+    background: var(--primary-color);
+    background-image: linear-gradient(rgba(37, 99, 235, 0.9), rgba(30, 78, 216, 0.9)), url('https://img.freepik.com/free-photo/abstract-blur-library-interior-background_74190-8332.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+
+.main-logo {
+    width: 80px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Si le cadenas est noir, il devient blanc */
+}
+
+.brand-content h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.brand-content p {
+    font-weight: 300;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Section Droite (Formulaire) */
+.form-section {
+    flex: 1.2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    color: var(--text-main);
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.form-header p {
+    color: var(--text-light);
+}
+
+/* Alertes d'erreurs */
+.alert-box {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 12px;
+    border-radius: 6px;
+    color: #b91c1c;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Champs de saisie */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field i:not(.toggle-pass) {
+    position: absolute;
+    left: 15px;
+    color: var(--text-light);
+}
+
+.input-field input, .input-field select {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    outline: none;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+    background: #f8fafc;
+}
+
+.input-field input:focus, .input-field select:focus {
+    border-color: var(--primary-color);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.toggle-pass {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: var(--text-light);
+}
+
+/* Boutons */
+.btn-confirm {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-confirm:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.secondary-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--text-light);
+    cursor: pointer;
+    font-size: 0.85rem;
+    text-decoration: underline;
+}
+
+.btn-text:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+    .brand-section {
+        padding: 30px;
+        min-height: 150px;
+    }
+    .form-section {
+        padding: 30px;
+    }
+}

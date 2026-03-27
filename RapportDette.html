@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapport Dette</title>
+    <link rel="stylesheet" href="RapportDette.css">
+</head>
+<body>
+    <div class="main-body-wrapper">
+            
+            <div id="sidebar-container"></div>
+            
+            <main class="content-principal">
+                <div class="recherche">
+                    <div class="contenuRechercheBtn">
+                        <input type="text" placeholder="Matricule de recherche">
+                        <button class="btnRechercher"><i class="fa-solid fa-magnifying-glass"></i>RECHERCHER</button>
+                    </div>
+                </div>
+
+                <div class="filtrerEleve">
+                    <div class="contenuFiltreEleve">
+                        <select name="filtre" id="filtreAnnee" name="filtre">
+                            <option value="Directeur" selected>Toutes</option>
+                            <option value="Comptable">1 Annee</option>
+                            <option value="Comptable">2 Annee</option>
+                            <option value="Enseignant">3 Annee</option>
+                            <option value="Enseignant">4 Annee</option>
+                            <option value="Enseignant">5 Annee</option>
+                            <option value="Enseignant">6 Annee</option>
+                        </select>
+                        <input type="text" placeholder="Entrer montant maximal">
+                        <select name="role" id="filtreannee" name="role">
+                            <option value="Directeur" selected>2025 - 2026</option>
+                            <option value="Comptable">2026 - 2027</option>
+                            <option value="Comptable">2027 - 2028</option>
+                        </select>
+                    </div>
+
+                    
+                </div>
+                <div class="btnGenerer">
+                    <button><i class="fa-solid fa-file-invoice"></i>GENERER</button>
+                </div>
+
+
+                <div class="tbRapportFrais">
+                    <table class="tableau">
+                        <tr class="entete">
+                            <th>Date paiement</th>
+                            <th>Matricule</th>
+                            <th>Nom</th>
+                            <th>Post - nom</th>
+                            <th>Classe</th>
+                            <th>Genre</th>
+                            <th>Montant paye</th>
+                            <th>Reste a payer</th>
+                            <th>Annee Scolaire</th>
+                        </tr>
+
+                        <tr class="ligne1">
+                            <th>06/10/2025</th>
+                            <th>1</th>
+                            <th class="nom">BARAKA</th>
+                            <th class="nom">NTWALI</th>
+                            <th>6 Annee</th>
+                            <th>Masculin</th>
+                            <th>120.00</th>
+                            <th>50.00</th>
+                            <th>2025-2026</th>
+                        </tr>
+
+                        <tr class="ligne2">
+                            <th>06/10/2025</th>
+                            <th>2</th>
+                            <th class="nom">JOSEPH</th>
+                            <th class="nom">BAHATI</th>
+                            <th>5 Annee</th>
+                            <th>Feminin</th>
+                            <th>120.00</th>
+                            <th>50.00</th>
+                            <th>2025-2026</th>
+                        </tr>
+
+                        <tr class="ligne3">
+                            <th>06/10/2025</th>
+                            <th>3</th>
+                            <th class="nom">SADIKI</th>
+                            <th class="nom">AMANI</th>
+                            <th>2 Annee</th>
+                            <th>Masculin</th>
+                            <th>120.00</th>
+                            <th>50.00</th>
+                            <th>2025-2026</th>
+                        </tr>
+
+                        <tr class="ligne4">
+                            <th>06/10/2025</th>
+                            <th>4</th>
+                            <th class="nom">GRACE</th>
+                            <th class="nom">DANIEL</th>
+                            <th>3 Annee</th>
+                            <th>Masculin</th>
+                            <th>120.00</th>
+                            <th>50.00</th>
+                            <th>2025-2026</th>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div class="somme">
+                    <div class="contenuRecherche">
+                        <div class="rubriques">
+                            <p><strong>Total dette Accumule</strong></p>
+                        </div>
+
+                        <div class="contenuRubriques">
+                            <p>390,00</p>
+                        </div>     
+                    </div>
+                </div>
+                
+                <div class="Action">
+                    <div class="btnAction">
+                        <button><i class="fa-solid fa-file-pdf"></i>EXPORT PDF</button>
+                        <button><i class="fa-solid fa-file-excel"></i>EXPORT EXCEL</button>
+                        <button><i class="fa-solid fa-print"></i>IMPRIMER</button>
+                        <button><i class="fa-solid fa-sort"></i>TRIER</button>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script>
+        fetch('BarreDeNavigation.html').then(response=>response.text()).then(data=>{
+            document.getElementById('sidebar-container').innerHTML=data;
+        });
+
+
+        const links = document.querySelectorAll(".nav-link");
+                const currentPage = window.location.pathname.split("/").pop();
+                links.forEach(link=>{
+                    if(link.getAttribute("href")===currentPage){
+                        link.classList.add("active");
+                    }
+                });
+    </script>
+</body>
+</html>

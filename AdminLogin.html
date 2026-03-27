@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="AdminLogin.css">
+</head>
+<body>
+    <div class="main-body-wrapper">
+            
+            <div id="sidebar-container"></div>
+            
+            <main class="content-principal">
+                <div class="Utilisateurs">
+                    <div class="contenuUtilisateur">
+                        <input type="text" placeholder="Ancien nom d'Utilisateur">
+                        <input type="password" placeholder="Ancien Password">
+                        <input type="text" placeholder="Nouveau Nom Utilisateur">
+                        <input type="password"placeholder="Nouveau Password">
+                    </div>
+
+                    <div class="boutons">
+                        <div class="btnAction">
+                            <button class="modifierBtn">MODIFIER</button>
+                            
+                        </div>
+                    </div>
+
+                    <div class="tbUtilisateur">
+                    <table class="tableau">
+                        <tr class="entete">
+                            <th>Matricule</th>
+                            <th>Nom d'Utilisateur</th>
+                            <th>Password</th>
+                        </tr>
+
+                        <tr class="ligne1">
+                            <th>1</th>
+                            <th class="nom">Amani</th>
+                            <th>Amani</th>
+                        
+                        </tr>
+
+                        <tr class="ligne2">
+                            <th>2</th>
+                            <th class="nom">Danny</th>
+                            <th>12345</th>
+                        </tr>   
+                    </table>
+                </div>
+                </div>
+            </main>
+        </div>
+
+        <script>
+        fetch('BarreDeNavigation.html').then(response=>response.text()).then(data=>{
+            document.getElementById('sidebar-container').innerHTML=data;
+        });
+
+    </script>
+</body>
+</html>

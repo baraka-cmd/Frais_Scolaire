@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Projet JS"
+		},
+		{
+			"path": "D:/Documents/MES SYLLABUS  ET TP/WEB2025"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "FraisScolaire"
+	}
+}

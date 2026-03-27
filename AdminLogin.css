@@ -1,0 +1,88 @@
+body{
+    background-color: rgba(167, 154, 138, 0.226);
+    overflow-X: hidden;
+    overflow-y: hidden;
+    
+}
+.content-principal{
+    padding: 15px;
+    padding-left: 30px;
+    
+}
+
+.Utilisateurs{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 150px;
+    margin-top: 100px;
+}
+.contenuUtilisateur{
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0;
+}
+
+.contenuUtilisateur input, select{
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    outline: 0;
+    border: 0;
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+}
+
+.btnAction{
+    display: flex;
+    gap: 4rem;
+    margin-left: 10px;
+
+}
+
+.btnAction button{
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    padding: 10px 20px;
+    background-color: blue;
+    align-items: center;
+}
+.btnAction .enregistrerBtn{
+    background-color: green;
+}
+
+.btnAction .modifierBtn{
+    background-color: yellow;
+}
+.btnAction .supprimerBtn{
+    background-color: red;
+}
+
+.tbUtilisateur{
+    margin-top: 10px;
+}
+
+.tableau{
+    margin-top: 20px;
+    border: black solid 2px;
+    border-radius: 10px;
+    border-bottom: none;
+    width: 400px;
+   margin-left: 5%;
+}
+
+
+table{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    
+}
+table .ligne1, .ligne3{
+    background-color: #a059593a; 
+}
+

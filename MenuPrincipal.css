@@ -1,0 +1,122 @@
+:root {
+    --bg-body: #f3f4f6;
+    --card-bg: #ffffff;
+    --primary: #4f46e5;
+    --text-dark: #111827;
+    --text-light: #6b7280;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-dark);
+}
+
+.layout-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+/* Header */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-titles h1 { font-size: 1.5rem; font-weight: 700; }
+.header-titles p { color: var(--text-light); font-size: 0.9rem; }
+
+.header-actions { display: flex; align-items: center; gap: 1rem; }
+.user-avatar {
+    width: 40px; height: 40px; background: var(--primary);
+    color: white; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; font-weight: bold;
+}
+
+/* Grille Responsive */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-box {
+    width: 50px; height: 50px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+.blue { background: #e0e7ff; color: #4338ca; }
+.green { background: #dcfce7; color: #15803d; }
+.purple { background: #f3e8ff; color: #7e22ce; }
+
+.label { color: var(--text-light); font-size: 0.8rem; font-weight: 600; }
+.value { font-size: 1.4rem; font-weight: 700; }
+
+/* Section Illustration */
+.main-visual-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+.visual-text { padding: 3rem; }
+.visual-text h2 { margin-bottom: 1rem; }
+.visual-text p { color: var(--text-light); margin-bottom: 2rem; line-height: 1.6; }
+
+.visual-img img {
+    width: 100%; height: 100%; object-fit: cover;
+    max-height: 350px;
+}
+
+.btn-primary {
+    background: var(--primary); color: white; border: none;
+    padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600;
+}
+
+/* --- RESPONSIVE --- */
+
+/* Tablette */
+@media (max-width: 992px) {
+    .main-visual-card { grid-template-columns: 1fr; }
+    .visual-img { order: -1; }
+}
+
+/* Téléphone & Montre */
+@media (max-width: 576px) {
+    .main-content { padding: 1rem; }
+    .content-header { flex-direction: column; text-align: center; gap: 1rem; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .visual-text { padding: 1.5rem; text-align: center; }
+}
+
+/* Montre Connectée */
+@media (max-width: 250px) {
+    h1, .header-titles p, .icon-box, .visual-img { display: none; }
+    .card { padding: 0.5rem; }
+}

@@ -1,0 +1,160 @@
+
+/* ============================================
+   STYLES.CSS - STYLES GLOBAUX RESPONSIVE
+   ============================================ */
+
+/* ===== 1. RESET GLOBAL ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    display: flex;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    color: #333;
+}
+
+/* ===== 2. ADAPTATION AU BODY-WRAPPER ===== */
+.main-body-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+/* Espace pour la sidebar fixe sur ordinateur */
+@media screen and (min-width: 1025px) {
+    .content-principal {
+        margin-left: 280px; /* Largeur de la sidebar */
+        width: calc(100% - 280px);
+    }
+    
+    .sidebar-custom {
+        position: fixed;
+    }
+}
+
+/* ===== 3. SCROLLBAR GLOBALE ===== */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #888, #aaa);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #777, #999);
+}
+
+/* ===== 4. TYPOGRAPHIE RESPONSIVE ===== */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* ===== 5. UTILITAIRES ===== */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+.d-none { display: none; }
+.d-flex { display: flex; }
+.d-block { display: block; }
+
+.w-100 { width: 100%; }
+.h-100 { height: 100%; }
+
+.m-0 { margin: 0; }
+.p-0 { padding: 0; }
+
+/* ===== 6. TRANSITIONS GLOBALES ===== */
+button, a, input, select {
+    transition: all 0.3s ease;
+}
+
+/* ===== 7. LOADING INDICATOR ===== */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ===== 8. MEDIA QUERIES GLOBALES ===== */
+
+/* Ordinateur portable (1280px+) */
+@media screen and (min-width: 1280px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+/* Tablette paysage (1024px - 1279px) */
+@media screen and (max-width: 1279px) and (min-width: 1024px) {
+    .container {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+/* Tablette portrait (768px - 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* Mobile (≤ 767px) */
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+}
+
+/* Impression */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Mode sombre système */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a202c;
+        color: #e2e8f0;
+    }
+}
